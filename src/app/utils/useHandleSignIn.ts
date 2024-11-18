@@ -8,14 +8,14 @@ export interface HandleAuthProp {
     password: string
     setEmail: React.Dispatch<React.SetStateAction<string>>
     setPassword: React.Dispatch<React.SetStateAction<string>>
-    handleSignIn: (event: React.FormEvent) => void
+    handleAuth: (event: React.FormEvent) => void
 }
 
 export default function useHandleSignIn() {
     const router = useRouter()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const handleSignIn = (event: React.FormEvent) => {
+    const handleAuth = (event: React.FormEvent) => {
         event.preventDefault()
         console.log('Email:', email)
         console.log('Password:', password)
@@ -33,5 +33,5 @@ export default function useHandleSignIn() {
                 console.log('error', errorCode, errorMessage)
             })
     }
-    return { email, setEmail, password, setPassword, handleSignIn }
+    return { email, setEmail, password, setPassword, handleAuth }
 }

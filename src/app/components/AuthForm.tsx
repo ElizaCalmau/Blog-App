@@ -4,12 +4,12 @@ interface Prop {
     authFunction: () => HandleAuthProp
 }
 
-export const SignInForm: React.FC<Prop> = ({ title, authFunction }) => {
-    const { email, setEmail, password, setPassword, handleSignIn } =
+export const AuthForm: React.FC<Prop> = ({ title, authFunction }) => {
+    const { email, setEmail, password, setPassword, handleAuth } =
         authFunction()
     return (
         <form
-            onSubmit={handleSignIn}
+            onSubmit={handleAuth}
             className="bg-white p-8 rounded shadow-md w-80"
         >
             <h2 className="text-2xl font-semibold mb-6 text-center">{title}</h2>
