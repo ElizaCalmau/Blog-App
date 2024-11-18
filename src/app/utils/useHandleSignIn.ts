@@ -3,14 +3,6 @@ import React, { useState } from 'react'
 import { auth } from '../firebase/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
-export interface HandleAuthProp {
-    email: string
-    password: string
-    setEmail: React.Dispatch<React.SetStateAction<string>>
-    setPassword: React.Dispatch<React.SetStateAction<string>>
-    handleAuth: (event: React.FormEvent) => void
-}
-
 export default function useHandleSignIn() {
     const router = useRouter()
     const [email, setEmail] = useState('')

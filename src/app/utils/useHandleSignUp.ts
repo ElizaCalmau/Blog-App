@@ -17,7 +17,6 @@ export const useHandleSignUp = () => {
             .catch((error) => {
                 const errorCode = error.code
                 const errorMessage = error.message
-                // ..
                 console.error('error', errorCode, errorMessage)
             })
     }
