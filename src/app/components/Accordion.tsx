@@ -11,12 +11,25 @@ export const Accordion: React.FC<Prop> = ({ children, title }) => {
         setIsOpen((prevState: boolean) => !prevState)
     }
     return (
-        <div>
-            <div className="flex gap-2 items-center">
-                <IoIosArrowDown onClick={handleOpen} />
+        <div className="border-b pb-4">
+            <div
+                className="flex gap-2 items-center cursor-pointer pb-3"
+                onClick={handleOpen}
+            >
+                <IoIosArrowDown
+                    className={`transition-transform duration-300 ${
+                        isOpen ? 'rotate-180' : ''
+                    }`}
+                />
                 {title}
             </div>
-            {isOpen && children}
+            <div
+                className={`overflow-hidden transition-all duration-500 ${
+                    isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                }`}
+            >
+                {children}
+            </div>
         </div>
     )
 }
