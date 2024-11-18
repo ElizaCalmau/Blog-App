@@ -1,4 +1,4 @@
-import { HandleAuthProp } from '../utils/useHandleSignIn'
+import { HandleAuthProp } from '../types/types'
 interface Prop {
     title: string
     authFunction: () => HandleAuthProp
