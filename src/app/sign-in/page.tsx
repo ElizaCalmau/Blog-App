@@ -4,7 +4,7 @@ import { auth } from '../firebase/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
 import { Accordion } from '../components/Accordion'
-
+import { SignInWithGoogleButton } from '../components/SignInWithGoogleButton'
 const SignIn = () => {
     const router = useRouter()
     const [email, setEmail] = useState('')
@@ -80,6 +80,9 @@ const SignIn = () => {
                         Sign In
                     </button>
                 </form>
+            </Accordion>
+            <Accordion title="Sign Up With Google">
+                <SignInWithGoogleButton />
             </Accordion>
         </div>
     )
