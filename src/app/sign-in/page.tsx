@@ -8,7 +8,6 @@ const SignIn = () => {
     const router = useRouter()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    console.log(router)
     const handleSignIn = (event: React.FormEvent) => {
         event.preventDefault()
         console.log('Email:', email)
