@@ -1,37 +1,18 @@
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { auth } from '../firebase/firebase'
+import { HandleAuthProp } from '../utils/useHandleSignIn'
+interface Prop {
+    title: string
+    authFunction: () => HandleAuthProp
+}
 
-export const SignInForm = () => {
-    const router = useRouter()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const handleSignIn = (event: React.FormEvent) => {
-        event.preventDefault()
-        console.log('Email:', email)
-        console.log('Password:', password)
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user
-                console.log('user', user)
-                setEmail('')
-                setPassword('')
-                router.push('/')
-            })
-            .catch((error) => {
-                const errorCode = error.code
-                const errorMessage = error.message
-                console.log('error', errorCode, errorMessage)
-            })
-    }
-
+export const SignInForm: React.FC<Prop> = ({ title, authFunction }) => {
+    const { email, setEmail, password, setPassword, handleSignIn } =
+        authFunction()
     return (
         <form
             onSubmit={handleSignIn}
             className="bg-white p-8 rounded shadow-md w-80"
         >
-            <h2 className="text-2xl font-semibold mb-6 text-center">Sign In</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-center">{title}</h2>
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-2" htmlFor="email">
@@ -65,7 +46,7 @@ export const SignInForm = () => {
                 type="submit"
                 className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
             >
-                Sign In
+                {title}
             </button>
         </form>
     )
