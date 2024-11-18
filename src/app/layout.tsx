@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Image from 'next/image'
 import homePageIamge from './assets/homePage_ph.png'
+import { Header } from './components/Header'
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -28,16 +29,20 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center gap-5`}
             >
-                <div className="w-2/4">
+                <div className="w-1/3">
                     <Image
+                        priority={false}
                         src={homePageIamge}
                         alt="Homepage Elizabeth's photo"
                         className="min-h-screen"
                     />
                 </div>
-                <div className="w-2/4">{children}</div>
+                <div>
+                    <Header />
+                    {children}
+                </div>
             </body>
         </html>
     )
