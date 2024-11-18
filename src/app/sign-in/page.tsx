@@ -2,21 +2,24 @@
 import { useState } from 'react'
 import { auth } from '../firebase/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { useRouter } from 'next/navigation'
 
 const SignIn = () => {
+    const router = useRouter()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    console.log(router)
     const handleSignIn = (event: React.FormEvent) => {
         event.preventDefault()
         console.log('Email:', email)
         console.log('Password:', password)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in
                 const user = userCredential.user
                 console.log('user', user)
-                // ...
+                setEmail('')
+                setPassword('')
+                router.push('/')
             })
             .catch((error) => {
                 const errorCode = error.code
@@ -32,7 +35,7 @@ const SignIn = () => {
                 className="bg-white p-8 rounded shadow-md w-80"
             >
                 <h2 className="text-2xl font-semibold mb-6 text-center">
-                    Sign Up
+                    Sign In
                 </h2>
 
                 <div className="mb-4">
