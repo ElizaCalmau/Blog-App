@@ -5,7 +5,7 @@ export const useHandleSignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSignUp = (event: React.FormEvent) => {
+    const handleAuth = (event: React.FormEvent) => {
         event.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -22,5 +22,5 @@ export const useHandleSignUp = () => {
             })
     }
 
-    return { email, setEmail, password, setPassword, handleSignUp }
+    return { email, setEmail, password, setPassword, handleAuth }
 }
