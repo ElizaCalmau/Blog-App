@@ -29,7 +29,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="grid grid-cols-3 gap-2 min-h-screen bg-gray-100 p-10">
             <Accordion title="Sign Up With Email">
                 <form
                     onSubmit={handleSignIn}
