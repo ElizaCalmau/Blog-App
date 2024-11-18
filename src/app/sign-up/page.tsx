@@ -1,30 +1,10 @@
 'use client'
-import { useState } from 'react'
-import { auth } from '../firebase/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+
+import { useHandleSignUp } from '../utils/handleSignUp'
 
 const SignUp = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    const handleSignUp = (event: React.FormEvent) => {
-        event.preventDefault()
-        console.log('Email:', email)
-        console.log('Password:', password)
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user
-                console.log('user', user)
-                setEmail('')
-                setPassword('')
-            })
-            .catch((error) => {
-                const errorCode = error.code
-                const errorMessage = error.message
-                // ..
-                console.error('error', errorCode, errorMessage)
-            })
-    }
+    const { handleSignUp, email, setEmail, password, setPassword } =
+        useHandleSignUp()
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
