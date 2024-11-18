@@ -30,7 +30,7 @@ const SignIn = () => {
 
     return (
         <div className="grid grid-cols-3 gap-2 min-h-screen bg-gray-100 p-10">
-            <Accordion title="Sign Up With Email">
+            <Accordion title="Sign In With Email">
                 <form
                     onSubmit={handleSignIn}
                     className="bg-white p-8 rounded shadow-md w-80"
@@ -81,7 +81,7 @@ const SignIn = () => {
                     </button>
                 </form>
             </Accordion>
-            <Accordion title="Sign Up With Google">
+            <Accordion title="Sign In With Google">
                 <SignInWithGoogleButton />
             </Accordion>
         </div>
