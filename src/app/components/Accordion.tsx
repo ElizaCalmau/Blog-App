@@ -25,10 +25,10 @@ export const Accordion: React.FC<Prop> = ({ children, title }) => {
             </div>
             <div
                 className={`overflow-hidden transition-all duration-500 ${
-                    isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                    isOpen ? 'opacity-100' : 'opacity-0'
                 }`}
             >
-                {children}
+                {isOpen && children}
             </div>
         </div>
     )
