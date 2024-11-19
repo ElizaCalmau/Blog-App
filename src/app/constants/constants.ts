@@ -11,3 +11,11 @@ export const HOME_DESCRIPRION =
 export const SIGN_UP = 'Sign Up'
 export const SIGN_IN = 'Sign In'
 export const SIGN_OUT = 'Sign OUT'
+
+export enum ROUTES {
+    SIGN_UP = '/sign-up',
+    SIGN_IN = '/sign-in',
+    CONTACTS = '/contacts',
+    ABOUT = '/about',
+    HOME = '/',
+}
