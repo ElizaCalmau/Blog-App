@@ -1,7 +1,7 @@
 import React from 'react'
-import { HOME_DESCRIPRION, SIGN_UP } from '../constants/constants'
+import { HOME_DESCRIPRION, SIGN_UP, ROUTES } from '../constants/constants'
 import { Button } from './Button'
-
+import { handleRedirect } from '../utils/handleRedirect'
 export const UnauthenticatedHome: React.FC = () => {
     return (
         <div className="flex flex-col gap-20">
@@ -19,6 +19,7 @@ export const UnauthenticatedHome: React.FC = () => {
                 width="w-2/4 "
                 padding="py-5"
                 position="m-auto"
+                onClick={() => handleRedirect(ROUTES.SIGN_UP)}
             />
         </div>
     )
