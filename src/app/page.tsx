@@ -5,6 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase/firebase'
 import { SignOutButton } from './components/SignOutButton'
 import { redirect } from 'next/navigation'
+import { UnauthenticatedHome } from './components/UnauthenticatedHome'
 
 interface User {
     email: string | null
@@ -20,16 +21,13 @@ export default function Home() {
                 const token = await user.getIdToken()
                 setUser({ email: user.email, accessToken: token })
             } else {
-                redirect('/sign-in')
+                //redirect('/sign-in')
             }
         })
     }, [])
     return (
         <main className="flex gap-8 items-start">
-            <div>
-                {user?.email}
-                {user?.email && <SignOutButton />}
-            </div>
+            <UnauthenticatedHome />
         </main>
     )
 }
