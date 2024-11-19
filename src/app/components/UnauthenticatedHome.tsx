@@ -14,11 +14,7 @@ export const UnauthenticatedHome: React.FC = () => {
             </div>
             <Button
                 text={SIGN_UP}
-                color="text-white bg-accent"
-                size="text-2xl font-bold"
-                width="w-2/4 "
-                padding="py-5"
-                position="m-auto"
+                styles="bg-blue-500 text-white font-bold text-lg rounded hover:bg-blue-600 transition-colors w-2/4 py-5 m-auto"
                 onClick={() => handleRedirect(ROUTES.SIGN_UP)}
             />
         </div>
