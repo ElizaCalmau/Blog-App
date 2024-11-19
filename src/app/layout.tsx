@@ -29,17 +29,15 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center gap-5`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-2`}
             >
-                <div className="w-1/3">
-                    <Image
-                        priority={false}
-                        src={homePageIamge}
-                        alt="Homepage Elizabeth's photo"
-                        className="min-h-screen"
-                    />
-                </div>
-                <div>
+                <Image
+                    priority={false}
+                    src={homePageIamge}
+                    alt="Homepage Elizabeth's photo"
+                    className="h-screen"
+                />
+                <div className="grid grid-rows-4 p-9">
                     <Header />
                     {children}
                 </div>
