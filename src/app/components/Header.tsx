@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
                     href={item.path}
                     className={`${
                         path === item.path ? 'text-accent' : 'text-black'
-                    } text-xl font-bold`}
+                    } text-xl font-bold h-fit`}
                 >
                     {item.name}
                 </Link>
