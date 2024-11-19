@@ -17,7 +17,7 @@ export const Button: React.FC<Prop> = ({
 }) => {
     return (
         <div
-            className={`${color} ${size} ${width} ${padding} ${position} rounded-3xl w-fit text-center cursor-pointer`}
+            className={`${color} ${size} ${width} ${padding} ${position} rounded-3xl text-center cursor-pointer`}
         >
             {text}
         </div>
