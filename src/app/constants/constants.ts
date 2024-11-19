@@ -12,7 +12,8 @@ export const SIGN_IN_PROMPT = 'Already have an account?'
 
 export const SIGN_UP = 'Sign Up'
 export const SIGN_IN = 'Sign In'
-export const SIGN_OUT = 'Sign OUT'
+export const SIGN_OUT = 'Sign Out'
+export const SIGN_IN_WITH_GOOGLE = 'Sign In With Goole'
 
 export enum ROUTES {
     SIGN_UP = '/sign-up',
