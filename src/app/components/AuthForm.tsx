@@ -1,4 +1,7 @@
+import { SIGN_UP } from '../constants/constants'
 import { HandleAuthProp } from '../types/types'
+import { Button } from './Button'
+import { SignInPrompt } from './SignInPrompt'
 interface Prop {
     title: string
     authFunction: () => HandleAuthProp
@@ -41,13 +44,13 @@ export const AuthForm: React.FC<Prop> = ({ title, authFunction }) => {
                     required
                 />
             </div>
-
-            <button
+            {title === SIGN_UP && <SignInPrompt />}
+            <Button
+                text={title}
+                styles="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
                 type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
-            >
-                {title}
-            </button>
+                onClick={handleAuth}
+            />
         </form>
     )
 }
