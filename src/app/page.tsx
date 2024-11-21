@@ -3,8 +3,6 @@
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase/firebase'
-import { SignOutButton } from './components/SignOutButton'
-import { redirect } from 'next/navigation'
 import { UnauthenticatedHome } from './components/UnauthenticatedHome'
 
 interface User {
@@ -21,7 +19,7 @@ export default function Home() {
                 const token = await user.getIdToken()
                 setUser({ email: user.email, accessToken: token })
             } else {
-                //redirect('/sign-in')
+               console.log('user is not authenticated')
             }
         })
     }, [])
