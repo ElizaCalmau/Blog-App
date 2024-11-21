@@ -13,7 +13,7 @@ export const Accordion: React.FC<Prop> = ({ children, title }) => {
     return (
         <div className="border-b pb-4">
             <div
-                className="flex gap-2 items-center cursor-pointer p-3"
+                className="flex gap-2 items-center cursor-pointer p-3 text-xl"
                 onClick={handleOpen}
             >
                 <IoIosArrowDown
