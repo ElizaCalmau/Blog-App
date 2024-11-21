@@ -13,7 +13,7 @@ export const Accordion: React.FC<Prop> = ({ children, title }) => {
     return (
         <div className="border-b pb-4">
             <div
-                className="flex gap-2 items-center cursor-pointer p-3"
+                className="flex gap-2 items-center cursor-pointer p-3 text-xl"
                 onClick={handleOpen}
             >
                 <IoIosArrowDown
@@ -25,10 +25,10 @@ export const Accordion: React.FC<Prop> = ({ children, title }) => {
             </div>
             <div
                 className={`overflow-hidden transition-all duration-500 ${
-                    isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                    isOpen ? 'opacity-100' : 'opacity-0'
                 }`}
             >
-                {children}
+                {isOpen && children}
             </div>
         </div>
     )

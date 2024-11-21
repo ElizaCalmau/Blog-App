@@ -1,19 +1,13 @@
 interface ButtonProp {
     text: string
-    styles: string
-    onClick?: React.MouseEventHandler<HTMLDivElement>
-    type?: string
+    styles?: string
+    onClick: React.MouseEventHandler<HTMLDivElement>
 }
 
-export const Button: React.FC<ButtonProp> = ({
-    text,
-    styles,
-    onClick,
-    type,
-}) => {
+export const Button: React.FC<ButtonProp> = ({ text, styles, onClick }) => {
     return (
         <div
-            className={`${styles} text-center cursor-pointer`}
+            className={`${styles} cursor-pointer text-center`}
             onClick={onClick}
         >
             {text}

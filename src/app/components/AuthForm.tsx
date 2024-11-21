@@ -13,7 +13,7 @@ export const AuthForm: React.FC<Prop> = ({ title, authFunction }) => {
     return (
         <form
             onSubmit={handleAuth}
-            className="bg-white p-8 rounded shadow-md w-80"
+            className="bg-white p-8 rounded shadow-md w-80 mb-3"
         >
             <h2 className="text-2xl font-semibold mb-6 text-center">{title}</h2>
 
@@ -47,8 +47,7 @@ export const AuthForm: React.FC<Prop> = ({ title, authFunction }) => {
             {title === SIGN_UP && <SignInPrompt />}
             <Button
                 text={title}
-                styles="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
-                type="submit"
+                styles="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors "
                 onClick={handleAuth}
             />
         </form>
